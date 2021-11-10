@@ -1,14 +1,19 @@
 import React from 'react'
-import ItemListContainer from '../../container/ItemListContainer'
 
 function Navbar() {
 
     return (
 
         <ul className="nav justify-content-center">
-            <ItemListContainer titulo='Inicio'/>
-            <ItemListContainer titulo='Categorias'/>
-            <ItemListContainer titulo='Contacto'/>
+            <li className="nav-item">
+                <a className="nav-link" href="#">Home</a>
+            </li>
+            <li className="nav-item">
+                <a className="nav-link" href="#">Quienes somos</a>
+            </li>
+            <li className="nav-item">
+                <a className="nav-link" href="#">Contacto</a>
+            </li>
         </ul>
 
     )
