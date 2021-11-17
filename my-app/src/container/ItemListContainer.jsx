@@ -1,10 +1,14 @@
-
+import React from "react"
+//import Item from "./Item"
 
 const ItemListContainer = (props) => {
+  
     return <>
 
-       <p className="saludo">{props.greeting}!!!</p>
-        
+        <div className="itemListContainer">  
+            {props.children}
+        </div>
+
     </>
 }
 
