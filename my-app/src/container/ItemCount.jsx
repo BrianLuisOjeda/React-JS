@@ -1,34 +1,46 @@
 import React from 'react'
 import { useState } from 'react'
+import { Button } from 'react-bootstrap'
 
-const ItemCount = ({stock, initial, onAdd}) => {
-    
-    const [count, setCount] = useState(0)
+const ItemCount = ({ stock, initial, onAdd, }) => {
+
+    const [count, setCount] = useState(initial)
 
     function sumar() {
         if (count < stock) {
             setCount(count + 1)
         }
     }
-    function restar(){
-        if (count > 0) {
+    function restar(initial) {
+        if (count > initial) {
             setCount(count - 1)
         }
     }
-    function agregar(){
-        onAdd(count)
-        setCount(0)
+    function agregar() {
+        if (count > initial) {
+            onAdd(count)
+        }
+        setCount(initial)
     }
 
-    
+
     return (
         <>
-        
-        <button onClick={sumar}>+</button>
-        {count}
-        <button onClick={restar}>-</button>
-        <button onClick={agregar}>Agregar al carrito</button>
-        
+
+            <div className="buttonsItemsCount">
+                
+
+                <div className="containerItemCount">
+                    <Button className="buttonCount" size="sm" onClick={sumar}>+</Button>
+                    {count}
+                    <Button className="buttonCount" size="sm" onClick={restar}>-</Button>
+                </div>
+            </div>
+            <div className="agregarCarrito">
+                <Button onClick={agregar} variant="success" size="sm">Agregar al carrito</Button>
+            </div>
+
+
         </>
     )
 }
