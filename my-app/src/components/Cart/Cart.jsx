@@ -3,7 +3,7 @@ import React from 'react'
 const Cart = () => {
     return (
         <div>
-            soy Cart //comentario de prueba
+            soy Cart
         </div>
     )
 }
