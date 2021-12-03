@@ -1,13 +1,10 @@
 import React from 'react'
-import ItemCount from './ItemCount';
 import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 
 const Item = (props) => {
 
-    function onAdd(cant) {
-        console.log(cant)//luego hay que hacer que lo muestre en el carrito
-    }
+    
 
     return <>
 
@@ -20,9 +17,7 @@ const Item = (props) => {
                 <Card.Subtitle className="mb-2 text-muted">
                     $ {props.prod.price}
                 </Card.Subtitle>
-                <div className="containersButton">
-                    <ItemCount initial={0} stock={props.prod.stock} onAdd={onAdd} />
-                </div>
+                
             </Card.Body>
         </Card>
 

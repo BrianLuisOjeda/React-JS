@@ -2,12 +2,10 @@ import React from 'react'
 import { Card} from 'react-bootstrap'
 import ItemCount from '../ItemCount';
 
-const ItemDetail = ({item }) => {
-    
-    function onAdd(cant) {
-        console.log(cant)//luego hay que hacer que lo muestre en el carrito
-    }
-    
+
+
+const ItemDetail = ({ item }) => {
+
 
     return (
         <Card key={item.id} className="card" style={{ width: '18rem' }}>
@@ -21,7 +19,8 @@ const ItemDetail = ({item }) => {
                 <Card.Text className="cardText">
                     {item.description}
                 </Card.Text>
-                <ItemCount initial={0} stock={item.stock} onAdd={onAdd} />
+                <ItemCount initial={0} stock={item.stock} />
+                
             </Card.Body>
         </Card>
     )

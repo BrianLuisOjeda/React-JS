@@ -1,8 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
 import { Button } from 'react-bootstrap'
+import ButtonGroup from './ButtonGroup'
 
-const ItemCount = ({ stock, initial, onAdd, }) => {
+
+const ItemCount = ({ stock, initial, onAdd }) => {
 
     const [count, setCount] = useState(initial)
 
@@ -22,13 +24,13 @@ const ItemCount = ({ stock, initial, onAdd, }) => {
         }
         setCount(initial)
     }
-
+    
 
     return (
         <>
 
             <div className="buttonsItemsCount">
-                
+
 
                 <div className="containerItemCount">
                     <Button className="buttonCount" size="sm" onClick={sumar}>+</Button>
@@ -37,7 +39,7 @@ const ItemCount = ({ stock, initial, onAdd, }) => {
                 </div>
             </div>
             <div className="agregarCarrito">
-                <Button onClick={agregar} variant="success" size="sm">Agregar al carrito</Button>
+                <ButtonGroup />
             </div>
 
 
