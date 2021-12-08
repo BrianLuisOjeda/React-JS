@@ -4,7 +4,7 @@ import ItemCount from '../ItemCount';
 
 
 
-const ItemDetail = ({ item }) => {
+const ItemDetail = ({ item, onAdd }) => {
 
 
     return (
@@ -19,7 +19,7 @@ const ItemDetail = ({ item }) => {
                 <Card.Text className="cardText">
                     {item.description}
                 </Card.Text>
-                <ItemCount initial={0} stock={item.stock} />
+                <ItemCount initial={0} stock={item.stock} onAdd={onAdd}/>
                 
             </Card.Body>
         </Card>
