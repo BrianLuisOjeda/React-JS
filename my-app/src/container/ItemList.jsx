@@ -1,12 +1,18 @@
 import React from 'react'
+import { useContext } from 'react';
 import Item from './Item'
 
-const ItemList = ({itemsAMapear}) => {
+const ItemList = ({ itemsAMapear }) => {
 
-    return( <>
 
-        {itemsAMapear.map(item => <Item key={item.id} prod={item} />)}
-       
+    return (<>
+
+        {itemsAMapear.map(item =>
+            <Item
+                key={item.id}
+                prod={item} />
+        )}
+
     </>
     )
 }

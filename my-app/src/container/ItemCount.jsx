@@ -1,56 +1,44 @@
 import React from 'react'
-import { useState } from 'react'
+import {useState} from 'react'
 import { Button } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
 
+const ItemCount = ({ stock, initial}) => {
 
-const ItemCount = ({ stock, initial, onAdd }) => {
-
-    const [count, setCount] = useState(initial)
-    const [compra, setCompra] = useState('agregar')
-
+    const [cant, setCant] = useState(initial)
 
     function sumar() {
-        if (count < stock) {
-            setCount(count + 1)
+        if (cant < stock) {
+            setCant(cant + 1)
+            console.log(cant);
         }
     }
     function restar() {
-        if (count > initial) {
-            setCount(count - 1)
+        if (cant > initial) {
+            setCant(cant - 1)
+            console.log(cant);
         }
-    }
-    function onAdd() {
-        setCompra(count)
-        setCount(initial)
-    }
-
-    const AgregarAlCarrito = () => {
-        return <Button variant="primary" onClick={onAdd}>Agregar al carrito</Button>
-    }
-
-    const IrAlCarrito = () => {
-        return <Link to='/Cart'>
-            <Button variant="success">Ir al carrito</Button>
-        </Link>
     }
 
     return (
         <>
             <div className="buttonsItemsCount">
                 <div className="containerItemCount">
-                    <Button className="buttonCount" size="sm" onClick={sumar}>+</Button>
-                    {count}
-                    <Button className="buttonCount" size="sm" onClick={restar}>-</Button>
+                    <Button
+                        className="buttonCount"
+                        size="sm"
+                        onClick={sumar}>
+                        +
+                    </Button>
+                    {cant}
+                    <Button
+                        className="buttonCount"
+                        size="sm"
+                        onClick={restar}>
+                        -
+                    </Button>
                 </div>
             </div>
-            <div className="agregarCarrito">
-                {compra === 'agregar' ?
-                    <AgregarAlCarrito />
-                    :
-                    <IrAlCarrito />
-                }
-            </div>
+            
         </>
     )
 }

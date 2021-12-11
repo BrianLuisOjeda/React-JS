@@ -47,7 +47,12 @@ const ItemListContainer = () => {
     return <>
 
         <div className="itemListContainer">
-            {loading ? <Loading className="loading" /> : <ItemList itemsAMapear={products} />}
+            {loading ?
+                <Loading
+                    className="loading" /> :
+                <ItemList
+                    itemsAMapear={products} />
+            }
         </div>
 
     </>
