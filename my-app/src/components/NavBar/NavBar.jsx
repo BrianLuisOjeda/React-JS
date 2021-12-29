@@ -11,6 +11,11 @@ function NavBar() {
 
         <ul className="nav justify-content-center">
             <li className="nav-item">
+                <Link to='/menu' className="nav-link " >
+                    Menu
+                </Link>
+            </li>
+            <li className="nav-item">
                 <Link to='/' className="nav-link " >
                     Home
                 </Link>

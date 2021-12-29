@@ -17,6 +17,7 @@ function CartContextProvider({children}) {
     return(
         <CartContext.Provider value={{
             cartList,
+            setCartList,
             agregarProducto,
             vaciarCarrito
         }}>
